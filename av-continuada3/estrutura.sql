@@ -18,3 +18,11 @@ senha VARCHAR( 12 ) NOT NULL,
 news VARCHAR( 8 ),
 id SERIAL PRIMARY KEY
 );
+
+CREATE TABLE funcionarios_estaduais.conta_falta (
+    cpf VARCHAR(11),
+    data DATE,
+    justificativa TEXT,
+    PRIMARY KEY (cpf, data),
+    FOREIGN KEY (cpf) REFERENCES funcionarios_estaduais.funcionario (cpf)
+);
